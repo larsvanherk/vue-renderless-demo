@@ -1,4 +1,4 @@
-# vue-renderless-sts
+# vue-renderless-demo
 
 ## Project setup
 ```

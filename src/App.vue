@@ -1,19 +1,28 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <my-user @input:user="user = $event" />
+    <hr>
+    <pre>{{ user }}</pre>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MyUser from './components/renderless/MyUser.vue';
 
 export default {
   name: 'app',
+
   components: {
-    HelloWorld
-  }
-}
+    MyUser
+  },
+
+  data: () => ({
+    user: {
+      firstName: '',
+      lastName: ''
+    }
+  })
+};
 </script>
 
 <style lang="scss">
@@ -21,8 +30,20 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
+  max-width: 60%;
+  margin: 60px auto auto;
+
+  hr {
+    width: 100%;
+    height: 2px;
+
+    margin: 40px auto;
+    border: none;
+    border-radius: 1px;
+
+    background: #efefef;
+  }
 }
 </style>
